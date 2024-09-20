@@ -9,7 +9,7 @@ zmodule git-info
 zmodule duration-info
 
 # theme
-zmodule sindresorhus/pure --source async.zsh --source pure.zsh
+zmodule romkatv/powerlevel10k
 
 # completions
 zmodule zsh-users/zsh-completions --fpath src
