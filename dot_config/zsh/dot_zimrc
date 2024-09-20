@@ -1,0 +1,20 @@
+# setup homebrew completions on macos
+# src: https://github.com/zimfw/zimfw/discussions/477#discussioncomment-3794455
+if [[ -d /opt/homebrew/share/zsh ]] && [[ $(uname) == Darwin ]] ; then
+    zmodule /opt/homebrew/share/zsh --fpath site-functions
+fi
+
+# prompt enhancement modules
+zmodule git-info
+zmodule duration-info
+
+# theme
+zmodule sindresorhus/pure --source async.zsh --source pure.zsh
+
+# completions
+zmodule zsh-users/zsh-completions --fpath src
+zmodule completion
+
+# fish like highlighting and suggestions
+zmodule zsh-users/zsh-syntax-highlighting
+zmodule zsh-users/zsh-autosuggestions
