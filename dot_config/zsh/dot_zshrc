@@ -23,6 +23,9 @@ fi
 # Initalize modules
 source ${ZIM_HOME}/init.zsh
 
+## CONFIGURE ZSH-VI-MODE
+ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+
 ## SETUP RUST
 . "$HOME/.cargo/env"
 
@@ -32,6 +35,14 @@ eval "$(zoxide init zsh)"
 ## CREATE ALIASES
 alias sv="source venv/bin/activate"
 alias ls="eza"
+
+## EXPORT VARIABLES
+export EDITOR="nvim"
+
+## SET ZSH OPTIONS
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt share_history
 
 ## SETUP P10K
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
