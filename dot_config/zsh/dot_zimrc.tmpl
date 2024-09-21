@@ -1,12 +1,8 @@
 # setup homebrew completions on macos
 # src: https://github.com/zimfw/zimfw/discussions/477#discussioncomment-3794455
-if [[ -d /opt/homebrew/share/zsh ]] && [[ $(uname) == Darwin ]] ; then
-    zmodule /opt/homebrew/share/zsh --fpath site-functions
-fi
-
-# prompt enhancement modules
-zmodule git-info
-zmodule duration-info
+{{- if eq .chezmoi.os "darwin" }}
+zmodule /opt/homebrew/share/zsh --fpath site-functions
+{{ end -}}
 
 # theme
 zmodule romkatv/powerlevel10k
