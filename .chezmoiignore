@@ -1,3 +1,7 @@
 {{- if ne .chezmoi.os "darwin" }}
 .chezmoiscripts/macos/**
 {{- end }}
+
+{{- if eq .chezmoi.os "darwin" }}
+.config/home-manager
+{{- end }}
