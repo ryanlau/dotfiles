@@ -27,10 +27,25 @@ source ${ZIM_HOME}/init.zsh
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
 ## SETUP RUST
-. "$HOME/.cargo/env"
+if [[ -f "$HOME/.cargo/env" ]]; then
+	. "$HOME/.cargo/env"
+fi
 
 ## SETUP ZOXIDE
-eval "$(zoxide init zsh)"
+if command -v zoxide &> /dev/null; then
+	eval "$(zoxide init zsh)"
+fi
+
+## SETUP FNM
+if command -v fnm &> /dev/null; then
+	eval "$(fnm env --use-on-cd --shell zsh)"
+fi
+
+## SETUP JENV
+if command -v jenv &> /dev/null; then
+	export PATH="$HOME/.jenv/bin:$PATH"
+	eval "$(jenv init -)"
+fi
 
 ## CREATE ALIASES
 alias sv="source venv/bin/activate"
