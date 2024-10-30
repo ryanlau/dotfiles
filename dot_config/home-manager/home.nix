@@ -12,6 +12,7 @@
 		fastfetch
 		fnm
 		fzf
+		gcc
 		go
 		lua
 		neovim
