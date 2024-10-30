@@ -3,10 +3,11 @@
 # check if zsh is installed
 if ! command -v zsh &>/dev/null; then
   echo "zsh is not installed"
+  echo "please install zsh and run chezmoi apply"
   exit 1
 fi
 
-# check if zsh was instaled with nix
+# check if zsh was installed with nix
 NIX_ZSH_PATH="$HOME/.nix-profile/bin/zsh"
 
 if [ -x "$NIX_ZSH_PATH" ]; then
