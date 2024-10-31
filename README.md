@@ -22,14 +22,19 @@ install [nix](https://nixos.org/) using the [determinate nix installer](https://
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --determinate
 ```
 
-install home-manager and use it to install packages/programs
+temporarily use chezmoi to fetch these dotfiles, dotfiles are permanently installed
 ```sh
-nix run home-manager/master -- switch --flake github:ryanlau/dotfiles?dir=dot_config/home-manager#ryan
+nix run nixpkgs#chezmoi -- init ryanlau --apply --exclude=scripts
 ```
 
-initialize chezmoi to install and manage dotfiles 
+install home-manager and use it to permanently install packages/programs including chezmoi
 ```sh
-chezmoi init --apply ryanlau
+nix run home-manager/master -- switch
+```
+
+run the chezmoi scripts that were ignored earlier 
+```sh
+chezmoi apply
 ```
 
 ## todo
