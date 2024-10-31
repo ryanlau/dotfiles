@@ -1,0 +1,9 @@
+[user]
+	name = Ryan Lau
+	email = 47727459+ryanlau@users.noreply.github.com
+[init]
+	defaultBranch = main
+[pull]
+	ff = only
+[push]
+	autosetupremote = true
