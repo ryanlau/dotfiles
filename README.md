@@ -19,7 +19,7 @@ chezmoi init --apply ryanlau
 
 install [nix](https://nixos.org/) using the [determinate nix installer](https://determinate.systems/nix-installer/)
 ```sh
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --determinate
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --no-confirm
 ```
 
 temporarily use chezmoi to fetch these dotfiles, dotfiles are permanently installed
