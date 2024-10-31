@@ -12,10 +12,10 @@
 
   outputs = { nixpkgs, home-manager, ... }:
     let
-      system = "x86_64-linux";
+      system = "{{if eq .chezmoi.arch "amd64"}}x86_64{{else if eq .chezmoi.arch "arm64"}}aarch64{{end}}-{{- .chezmoi.os }}";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-      homeConfigurations."ryan" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."{{- .chezmoi.username }}" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         # Specify your home configuration modules here, for example,
