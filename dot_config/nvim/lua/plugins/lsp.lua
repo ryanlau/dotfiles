@@ -4,9 +4,9 @@ return {
 		cmd = { "LspInfo", "LspInstall", "LspStart" },
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
-			{ "williamboman/mason.nvim", opts = {} },
+			{ "williamboman/mason.nvim",          opts = {} },
 			{ "williamboman/mason-lspconfig.nvim" },
-			{ "j-hui/fidget.nvim", opts = {} },
+			{ "j-hui/fidget.nvim",                opts = {} },
 		},
 		config = function()
 			-- LspAttach is where you enable features that only work
@@ -62,7 +62,6 @@ return {
 	{
 		"saghen/blink.cmp",
 		lazy = false,
-		dependencies = "rafamadriz/friendly-snippets",
 		version = "v0.4.1",
 
 		---@module 'blink.cmp'
