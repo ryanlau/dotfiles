@@ -1,0 +1,9 @@
+theme = light:Kanagawa Dragon,dark:Kanagawa Dragon
+background-opacity = 0.8
+background-blur-radius = 20
+
+font-size = 16
+font-family = "IosevkaTerm Nerd Font Mono"
+
+keybind = global:cmd+slash=toggle_quick_terminal
+quick-terminal-animation-duration = 0
