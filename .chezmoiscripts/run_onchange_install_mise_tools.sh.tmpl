@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# dconf.ini hash: {{ include "dot_config/mise/config.toml" | sha256sum }}
+
+# check if zsh is installed
+if ! command -v mise &>/dev/null; then
+  echo "mise is not installed"
+  echo "please install mise and run chezmoi apply"
+  exit 1
+fi
+
+mise install
