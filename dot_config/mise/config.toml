@@ -1,5 +1,6 @@
 [tools]
 go = "latest"
+lua = "latest"
 node = "lts"
 uv = "latest"
 
