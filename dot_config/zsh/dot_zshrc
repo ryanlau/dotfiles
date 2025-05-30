@@ -26,6 +26,11 @@ source ${ZIM_HOME}/init.zsh
 ## CONFIGURE ZSH-VI-MODE
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
+## SETUP MISE
+if command -v mise &> /dev/null; then
+	zsh-defer smartcache eval mise activate zsh
+fi
+
 ## SETUP RUST
 if [[ -f "$HOME/.cargo/env" ]]; then
 	zsh-defer . "$HOME/.cargo/env"
@@ -33,19 +38,14 @@ fi
 
 ## SETUP ZOXIDE
 if command -v zoxide &> /dev/null; then
-	zsh-defer eval "$(zoxide init zsh)"
-fi
-
-## SETUP FNM
-if command -v fnm &> /dev/null; then
-	zsh-defer eval "$(fnm env --use-on-cd --shell zsh)"
+	zsh-defer smartcache eval zoxide init zsh
 fi
 
 ## SETUP JENV
 if command -v jenv &> /dev/null; then
 	zsh-defer '
 	export PATH="$HOME/.jenv/bin:$PATH"
-	eval "$(jenv init -)"
+	smartcache eval jenv init -
 	'
 fi
 
