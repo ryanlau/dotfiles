@@ -2,11 +2,11 @@
 go = "latest"
 lua = "latest"
 node = "lts"
-uv = "latest"
+# uv = "latest"
 rust = "latest"
 
 [settings]
 trusted_config_paths = ["~/.local/share/chezmoi/dot_config/mise/config.toml"]
 idiomatic_version_file_enable_tools = ["python"]
-python.uv_venv_auto = true
-experimental = true
+# python.uv_venv_auto = true
+# experimental = true
