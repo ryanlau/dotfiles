@@ -17,6 +17,17 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 
+# Bootstrap jankyborders and sketchybar
+after-startup-command = [
+  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=4.0',
+	# 'exec-and-forget sketchybar'
+]
+
+# Notify sketchybar about workspace change
+# exec-on-workspace-change = ['/bin/bash', '-c',
+#     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+# ]
+
 [workspace-to-monitor-force-assignment]
 		# workspace 1-5 is for built-in or main monitor
     1 = ['built-in', 'main']
@@ -32,8 +43,8 @@ enable-normalization-opposite-orientation-for-nested-containers = true
     10 = ['secondary', 'main', 'built-in']
 
 [gaps]
-    inner.horizontal = 8
-    inner.vertical =   8
+    inner.horizontal = 12
+    inner.vertical =   12
     outer.left =       8
     outer.bottom =     8
     outer.top =        8
@@ -52,11 +63,6 @@ enable-normalization-opposite-orientation-for-nested-containers = true
     alt-shift-l = 'move right'
 
     alt-f = 'fullscreen'
-
-    # alt-s = 'layout v_accordion' # 'layout stacking' in i3
-    # alt-w = 'layout h_accordion' # 'layout tabbed' in i3
-    # alt-e = 'layout tiles' # 'layout toggle split' in i3
-
     alt-shift-space = 'layout floating tiling' # 'floating toggle' in i3
 
     # Not supported, because this command is redundant in AeroSpace mental model.
@@ -89,7 +95,6 @@ enable-normalization-opposite-orientation-for-nested-containers = true
     alt-shift-9 = 'move-node-to-workspace 9'
     alt-shift-0 = 'move-node-to-workspace 10'
 
-
     alt-r = 'mode resize'
     alt-semicolon = 'mode service'
 
@@ -97,12 +102,19 @@ enable-normalization-opposite-orientation-for-nested-containers = true
     cmd-alt-h = [] # Disable "hide others"
 
 [mode.service.binding]
+    # reset layout
     r = ['flatten-workspace-tree', 'mode main']
+
+    # force tiles
+    t = ['layout tiles', 'mode main']
+
     c = ['reload-config', 'mode main']
+
     h = ['join-with left', 'mode main']
     j = ['join-with down', 'mode main']
     k = ['join-with up', 'mode main']
     l = ['join-with right', 'mode main']
+
     esc = 'mode main'
     enter = 'mode main'
 
@@ -111,6 +123,22 @@ enable-normalization-opposite-orientation-for-nested-containers = true
     j = 'resize height -50'
     k = 'resize height +50'
     l = 'resize width -50'
+
     r = ['balance-sizes', 'mode main']
+
     enter = 'mode main'
     esc = 'mode main'
+
+
+[[on-window-detected]]
+if.app-id="com.mitchellh.ghostty"
+run= [
+  "layout floating",
+]
+
+
+[[on-window-detected]]
+if.app-id="cc.ffitch.shottr"
+run= [
+  "layout floating",
+]
