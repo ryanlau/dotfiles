@@ -30,24 +30,33 @@
 	homebrew = {
 		enable = true;
 		brews = [
-			"neovim"
-			"eza"
-			"mise"
+			"borders"
 			"chezmoi"
+			"eza"
 			"fastfetch"
 			"fd"
 			"fzf"
+			"gnupg"
+			"mise"
+			"neovim"
+			"sketchybar"
 			"tmux"
 			"zoxide"
 		];
 		casks = [
+			"aerospace"
+			"font-commit-mono-nerd-font"
+			"ghostty"
+			"google-chrome"
+			"jordanbaird-ice"
 			"keeper-password-manager"
 			"raycast"
-			"google-chrome"
+			"shottr"
 			"visual-studio-code"
-			"ghostty"
-			"aerospace"
-			"jordanbaird-ice"
+		];
+		taps = [
+			"nikitabobko/homebrew-tap"
+			"FelixKratz/homebrew-formulae"
 		];
 	};
 
@@ -55,11 +64,13 @@
 	system = {
 		defaults = {
 			NSGlobalDomain = {
+				_HIHideMenuBar = false;
 				AppleInterfaceStyle = "Dark"; # dark mode
 				AppleICUForce24HourTime = true;
 				"com.apple.swipescrolldirection" = false; # enable natural scrolling direction
 				InitialKeyRepeat = 15; # start repeating characters after 15ms
 				KeyRepeat = 2; # repeat characters every 2ms
+				ApplePressAndHoldEnabled = false; # disable accent character suggestion on key hold
 				"com.apple.keyboard.fnState" = true; # use function keys as function keys by default
 			};
 			menuExtraClock.ShowSeconds = true;
