@@ -1,9 +1,12 @@
-theme = light:Kanagawa Dragon,dark:Kanagawa Dragon
-background-opacity = 0.8
+theme = light:Mellifluous,dark:Mellifluous
+background-opacity = 1
 background-blur-radius = 20
+# background-opacity = 0.4
+# background-blur = macos-glass-regular
+# macos-titlebar-style = transparent
 
 font-size = 16
-font-family = "IosevkaTerm Nerd Font Mono"
+font-family = "TX-02-Data"
 
-keybind = global:cmd+slash=toggle_quick_terminal
+# keybind = global:cmd+slash=toggle_quick_terminal
 quick-terminal-animation-duration = 0
